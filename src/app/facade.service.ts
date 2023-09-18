@@ -29,4 +29,12 @@ export class FacadeService {
   public getUsers () {
     return this.store.select(selectors.selectUsers)
   }
+
+  public dispatchEmployee () {
+    this.store.dispatch(actions.loadEmployee())
+  }
+
+  public getEmployees (){
+    return this.store.select(selectors.selectEmployee)
+  }
 }

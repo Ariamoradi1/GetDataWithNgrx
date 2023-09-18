@@ -17,3 +17,10 @@ export interface UsersState {
 export const usersState : UsersState = {
   data : []
 }
+
+export interface employee {
+  data : []
+}
+export const employee : employee = {
+  data : []
+}

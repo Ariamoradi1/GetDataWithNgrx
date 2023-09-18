@@ -1,6 +1,7 @@
 import { createReducer, on } from '@ngrx/store';
 import * as fromActions from "./store.action";
 import * as states from "./store.state"
+import { state } from '@angular/animations';
 
 export const productsReducer = createReducer(
   states.initialState,
@@ -13,4 +14,10 @@ export const usersReducer = createReducer (
   states.usersState,
   on(fromActions.loadUsers,(state) => ({...state})),
   on(fromActions.loadUsersSuccess, (state, {data}) => ({...state, data}))
+)
+
+export const employeeReducer = createReducer (
+  states.employee,
+  on(fromActions.loadEmployee, (state) => ({...state})),
+  on(fromActions.loadEmployeeSuccess, (state,{data}) => ({...state,data}))
 )

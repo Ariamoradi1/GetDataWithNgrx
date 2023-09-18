@@ -12,3 +12,9 @@ export const selectProductsError = createSelector(selectProductsState, (state) =
 export const selectUsersState = createFeatureSelector<states.UsersState>('users');
 
 export const selectUsers = createSelector(selectUsersState,(state) => state.data)
+
+//// select employee
+
+export const selectEmployeeState = createFeatureSelector<states.employee>('employee');
+
+export const selectEmployee = createSelector(selectEmployeeState,(state) => state.data)
