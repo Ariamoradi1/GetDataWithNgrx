@@ -12,13 +12,15 @@ import { EffectsModule } from '@ngrx/effects';
 import { productsReducer, usersReducer } from './Store/store.reducer';
 import { ProductsEffects } from './Store/store.effect';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatTableModule } from '@angular/material/table'
+import { MatTableModule } from '@angular/material/table';
+import { UsersComponent } from './users/users.component'
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     SecComponent,
-    AboutComponent
+    AboutComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
