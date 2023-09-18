@@ -13,14 +13,15 @@ import { productsReducer, usersReducer } from './Store/store.reducer';
 import { ProductsEffects } from './Store/store.effect';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
-import { UsersComponent } from './users/users.component'
+import { UsersComponent } from './users/users.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     SecComponent,
     AboutComponent,
-    UsersComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +31,10 @@ import { UsersComponent } from './users/users.component'
     StoreModule.forRoot({products: productsReducer, users: usersReducer}, {}),
     EffectsModule.forRoot([ProductsEffects]),
     BrowserAnimationsModule,
-    MatTableModule
+    MatTableModule,
+    MatFormFieldModule,
+    UsersComponent,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
