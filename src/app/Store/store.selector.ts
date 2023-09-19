@@ -18,3 +18,8 @@ export const selectUsers = createSelector(selectUsersState,(state) => state.data
 export const selectEmployeeState = createFeatureSelector<states.employee>('employee');
 
 export const selectEmployee = createSelector(selectEmployeeState,(state) => state.data)
+
+////
+
+export const addUserState = createFeatureSelector<states.addState>('post')
+export const addUser = createSelector(addUserState, (state) => state.data)

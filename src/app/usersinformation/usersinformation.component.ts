@@ -17,5 +17,6 @@ export class UsersinformationComponent implements OnInit {
 
   ngOnInit(): void {
    this.facade.dispatchEmployee()
+   console.log(this.users$)
   }
 }

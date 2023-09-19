@@ -12,3 +12,7 @@ export const loadUsersSuccess = createAction('[Users] Load Users Success', props
 ///employe
 export const loadEmployee = createAction('[employee] Load Employee')
 export const loadEmployeeSuccess = createAction('[employee] Load Employee Success',props<{data:any}>())
+
+///add user
+export const addUser = createAction('[add] Add User', props<{myObj:any}>())
+export const addUserSuccess = createAction('[add] Add User Success', props<{data:any}>())

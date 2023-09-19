@@ -9,7 +9,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AboutComponent } from './about/about.component';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { employeeReducer, productsReducer, usersReducer } from './Store/store.reducer';
+import { employeeReducer, postReducer, productsReducer, usersReducer } from './Store/store.reducer';
 import { ProductsEffects } from './Store/store.effect';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
@@ -30,7 +30,8 @@ import { UsersinformationComponent } from './usersinformation/usersinformation.c
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    StoreModule.forRoot({products: productsReducer, users: usersReducer, employee: employeeReducer}, {}),
+    StoreModule.forRoot({products: productsReducer, users: usersReducer,
+       employee: employeeReducer,post : postReducer}, {}),
     EffectsModule.forRoot([ProductsEffects]),
     BrowserAnimationsModule,
     MatTableModule,

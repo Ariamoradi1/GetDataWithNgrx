@@ -40,5 +40,16 @@ export class ProductsEffects {
       map((data) => fromActions.loadEmployeeSuccess({data}))
     ))
    )
-  )
+  );
+
+  createPost$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(fromActions.addUser),
+      mergeMap((action) =>
+        this.service.addPost(action.myObj).pipe(
+          map((data) => fromActions.addUserSuccess({  data })),
+        )
+      )
+    )
+  );
 }

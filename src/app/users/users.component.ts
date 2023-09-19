@@ -7,6 +7,8 @@ import {MatButtonModule} from '@angular/material/button';
 import { FormControl, Validators } from '@angular/forms';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import Swal from 'sweetalert2';
+import { FacadeService } from '../facade.service';
+import { Post } from '../models/post.model';
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
@@ -16,10 +18,14 @@ import Swal from 'sweetalert2';
     MatCardModule,MatButtonModule,FormsModule,ReactiveFormsModule],
 })
 export class UsersComponent {
+
    userNameControl = new FormControl('',[Validators.pattern('^[a-z0-9_-]{4,15}$')])
    emailControl = new FormControl('',[Validators.pattern('[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+')])
+   lastNameValue = new FormControl('',[Validators.maxLength(4)])
+   ageValue = new FormControl('',[Validators.maxLength(4)])
 
-   constructor(){}
+   constructor(private facade: FacadeService){
+   }
 
    clickHandler(){
     if (!this.emailControl.valid || !this.userNameControl.valid) {
@@ -29,7 +35,13 @@ export class UsersComponent {
         text: 'Something went wrong!',
       })
     }else{
-      alert('ok')
+      const myObj = {
+        name: this.userNameControl.value,
+        lastName: this.lastNameValue.value,
+        email: this.emailControl.value,
+        age: this.ageValue.value
+      }
+      this.facade.dispatchAdd(myObj)
     }
    }
 }

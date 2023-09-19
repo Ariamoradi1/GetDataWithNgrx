@@ -24,3 +24,11 @@ export interface employee {
 export const employee : employee = {
   data : []
 }
+
+export interface addState {
+  data: [];
+}
+
+export const addState : addState = {
+  data: []
+}

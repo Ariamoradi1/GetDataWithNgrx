@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import * as actions from "./Store/store.action";
 import * as selectors from "./Store/store.selector"
+import { Post } from './models/post.model';
 
 @Injectable({
   providedIn: 'root'
@@ -36,5 +37,9 @@ export class FacadeService {
 
   public getEmployees (){
     return this.store.select(selectors.selectEmployee)
+  }
+
+  public dispatchAdd (myObj:any) {
+    this.store.dispatch(actions.addUser({myObj}))
   }
 }

@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { myUsers } from './models/myUsers.model';
+import { json } from 'react-router-dom';
+import { Post } from './models/post.model';
 
 @Injectable({
   providedIn: 'root'
@@ -24,5 +26,8 @@ export class UsersService {
           return users;
         })
       );
+  }
+  addPost(myObj : Post): Observable<Post> {
+    return this.http.post<Post>(`https://angular-ngrx-45a84-default-rtdb.firebaseio.com/users.json`,myObj);
   }
 }
