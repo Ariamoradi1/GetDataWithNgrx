@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { myUsers } from './models/myUsers.model';
-import { json } from 'react-router-dom';
 import { Post } from './models/post.model';
 
 @Injectable({

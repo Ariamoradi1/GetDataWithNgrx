@@ -42,7 +42,7 @@ export class ProductsEffects {
    )
   );
 
-  createPost$ = createEffect(() =>
+  addUser$ = createEffect(() =>
     this.actions$.pipe(
       ofType(fromActions.addUser),
       mergeMap((action) =>

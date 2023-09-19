@@ -1,5 +1,4 @@
 import { createAction, props } from '@ngrx/store';
-import { myUsers } from '../models/myUsers.model';
 
 export const loadProducts = createAction('[Products] Load Products');
 export const loadProductsSuccess = createAction('[Products] Load Products Success', props<{ data: any }>());
